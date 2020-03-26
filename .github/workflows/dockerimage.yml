@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag digiroad-privateroad-backend:latest
+      - uses: mr-smithers-excellent/docker-build-push@v2
+        with:
+          image: tommilehtisaari/digiroad-privateroad-backend
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
