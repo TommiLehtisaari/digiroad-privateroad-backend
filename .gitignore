@@ -14,6 +14,7 @@ Desktop.ini
 
 # Build
 build
+dist
 
 # npm
 node_modules
