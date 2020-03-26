@@ -1,0 +1,8 @@
+{
+  "name": "digiroad-privateroad-backend",
+  "version": "0.0.0",
+  "description": "This is backend for Finnish National Transport Agency's private road form.",
+  "main": "src/index.tsx",
+  "author": "Tommi Lehtisaari",
+  "license": "MIT"
+}
