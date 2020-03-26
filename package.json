@@ -2,7 +2,25 @@
   "name": "digiroad-privateroad-backend",
   "version": "0.0.0",
   "description": "This is backend for Finnish National Transport Agency's private road form.",
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "build": "tsc -p ."
+  },
   "author": "Tommi Lehtisaari",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/config": "^0.0.36",
+    "@types/express": "^4.17.3",
+    "@types/node": "^12.12.31",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pdfmake": "^0.1.65",
+    "yup": "^0.28.3"
+  }
 }
