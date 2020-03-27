@@ -1,12 +1,11 @@
-import express, { Application, Request, Response } from 'express'
+import express, { Application } from 'express'
+import { routes } from './routes'
 
 const PORT = process.env.PORT || 5000
 
 const app: Application = express()
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello world!')
-})
+routes(app)
 
 const server = app.listen(PORT, () => {
   console.log(`Express Running on port: ${PORT} 🚀`)
