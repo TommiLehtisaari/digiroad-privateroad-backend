@@ -10,12 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: azure/docker-login@v1
+    ‐ name: build
+        id: build
+        uses: docker/build-action@v1
         with:
-          login-server: docker.io
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - run: |
-          docker build . -t docker.io/tommilehtisaari/digiroad-privateroad-backend:${{ github.sha }}
-          docker push docker.io/tommilehtisaari/digiroad-privateroad-backend:${{ github.sha }
+          repository: tommilehtisaari/digiroad-privateroad-backend
+    ‐ name: login
+      uses: docker/login-action@v1
+      with:
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    ‐ name: push
+      uses: docker/push-action@v1
+      with:
+        registry: digiroad-privateroad-backend
+        tags: ${{ github.sha }}
