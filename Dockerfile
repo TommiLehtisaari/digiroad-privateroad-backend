@@ -6,7 +6,7 @@ RUN yarn global add typescript
 
 COPY package* ./
 
-RUN yarn && yarn cache clean
+RUN yarn install --production && yarn cache clean
 COPY ./src ./src
 COPY tsconfig.json .
 RUN yarn build
