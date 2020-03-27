@@ -12,4 +12,3 @@ COPY tsconfig.json .
 RUN yarn build
 
 CMD ["node", "/usr/app/dist/index.js"]
-
