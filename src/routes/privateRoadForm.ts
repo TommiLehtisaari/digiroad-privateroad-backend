@@ -1,9 +1,9 @@
-import { Router, Response } from 'express'
-
+import { Router, Request, Response } from 'express'
+import validate from '../middleware/privateRoadValidator'
 const router = Router()
 
-router.post('/', async (_, res: Response) => {
-  res.send('Hello worls')
+router.post('/', [validate], async (req: Request, res: Response) => {
+  res.send(req.body)
 })
 
 export default router
